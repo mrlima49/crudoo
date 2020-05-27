@@ -28,6 +28,11 @@ class Contato{
         $stmt->execute();
         if($stmt->rowCount() > 0){
             $dados = $stmt->fetchAll();
+            foreach($dados as $dado){
+                echo "<p>Nome: {$dado['nome']}</p>";
+                echo "<p>Email: {$dado['email']}</p>";
+                echo "<hr>";
+            }
         }else{
             echo "<p>Não existe contatos cadastrados</p>";
         }
